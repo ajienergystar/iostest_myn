@@ -47,49 +47,47 @@ class HomeDetailViewController: UIViewController {
     
     @IBAction func backTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
-    
     }
     
   
     
     private func makeStarIcon() -> UIImageView {
-            /// declare default icon and highlightedImage
-            let imageView = UIImageView(image: #imageLiteral(resourceName: "star"), highlightedImage: #imageLiteral(resourceName: "star-2"))
-            imageView.contentMode = .scaleAspectFit
-            imageView.isUserInteractionEnabled = true
-            return imageView
-        }
+        /// declare default icon and highlightedImage
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "star"), highlightedImage: #imageLiteral(resourceName: "star-2"))
+        imageView.contentMode = .scaleAspectFit
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }
     
     private func createStars() {
-            /// loop through the number of our stars and add them to the stackView (starsContainer)
-            for index in 1...Constants.starsCount {
-                let star = makeStarIcon()
-                star.tag = index
-                StarStackView.addArrangedSubview(star)
-            }
+        for index in 1...Constants.starsCount {
+            let star = makeStarIcon()
+            star.tag = index
+            StarStackView.addArrangedSubview(star)
         }
+    }
     
     @objc private func didSelectRate(gesture: UITapGestureRecognizer) {
-            let location = gesture.location(in: StarStackView)
-            let starWidth = StarStackView.bounds.width / CGFloat(Constants.starsCount)
-            let rate = Int(location.x / starWidth) + 1
+        let location = gesture.location(in: StarStackView)
+        let starWidth = StarStackView.bounds.width / CGFloat(Constants.starsCount)
+        let rate = Int(location.x / starWidth) + 1
             
             /// if current star doesn't match selectedRate then we change our rating
-            if rate != self.selectedRate {
-                feedbackGenerator.selectionChanged()
-                self.selectedRate = rate
-            }
+        if rate != self.selectedRate {
+            feedbackGenerator.selectionChanged()
+        self.selectedRate = rate
+    }
             
-        StarStackView.arrangedSubviews.forEach { subview in
-                guard let starImageView = subview as? UIImageView else {
-                    return
-                }
-                starImageView.isHighlighted = starImageView.tag <= rate
+    StarStackView.arrangedSubviews.forEach { subview in
+            guard let starImageView = subview as? UIImageView else {
+                return
             }
+            starImageView.isHighlighted = starImageView.tag <= rate
         }
+    }
     
     private struct Constants {
-        static let starsCount: Int = 5
+        static let starsCount: Int = 3
             
         static let sendButtonHeight: CGFloat = 50
         static let containerHorizontalInsets: CGFloat = 30
