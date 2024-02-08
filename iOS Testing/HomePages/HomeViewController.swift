@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  iOS Testing
 //
-//  Created by mymac on 08/02/24.
+//  Created by Aji Prakosa on 08/02/24.
 //
 
 import UIKit

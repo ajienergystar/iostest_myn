@@ -22,6 +22,7 @@
 		1F4B129F2B747198003FCF21 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B129D2B747198003FCF21 /* TableViewCell.xib */; };
 		1F4B12A32B74816C003FCF21 /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B12A12B74816C003FCF21 /* HomeDetailViewController.swift */; };
 		1F4B12A42B74816C003FCF21 /* HomeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F4B12A22B74816C003FCF21 /* HomeDetailViewController.xib */; };
+		1F4B12A62B748B09003FCF21 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B12A52B748B09003FCF21 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		1F4B129D2B747198003FCF21 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		1F4B12A12B74816C003FCF21 /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		1F4B12A22B74816C003FCF21 /* HomeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailViewController.xib; sourceTree = "<group>"; };
+		1F4B12A52B748B09003FCF21 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				1F4B12952B745515003FCF21 /* BaseNavigationController.swift */,
+				1F4B12A52B748B09003FCF21 /* UIViewExtension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				1F4B129E2B747198003FCF21 /* TableViewCell.swift in Sources */,
 				1F4B12692B73BECB003FCF21 /* ViewController.swift in Sources */,
 				1F4B12652B73BECB003FCF21 /* AppDelegate.swift in Sources */,
+				1F4B12A62B748B09003FCF21 /* UIViewExtension.swift in Sources */,
 				1F4B12962B745515003FCF21 /* BaseNavigationController.swift in Sources */,
 				1F4B129A2B745681003FCF21 /* HomeViewController.swift in Sources */,
 			);
