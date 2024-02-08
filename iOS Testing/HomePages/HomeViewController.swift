@@ -66,6 +66,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let viewController = HomeDetailViewController()
         viewController.titles = titles
         viewController.imageStr = images
+        viewController.ratting = ratings
         self.navigationController?.pushViewController(viewController, animated: true)
 
     }

@@ -17,10 +17,13 @@ class HomeDetailViewController: UIViewController {
     
     var titles = String()
     var imageStr = String()
+    var ratting = String()
     
     private var selectedRate: Int = 0
         
     private let feedbackGenerator = UISelectionFeedbackGenerator()
+    
+    var pointRate = Int()
         
     
     override func viewDidLoad() {
@@ -36,6 +39,16 @@ class HomeDetailViewController: UIViewController {
         StarStackView.addGestureRecognizer(tapGesture)
         
         createStars()
+        feedbackGenerator.selectionChanged()
+        
+        switch ratting {
+        case "Normal":
+            self.showStarType(id: 1)
+        case "Very Good":
+            self.showStarType(id: 2)
+        default:
+            self.showStarType(id: 3)
+        }
                 
     }
     
@@ -72,17 +85,27 @@ class HomeDetailViewController: UIViewController {
         let starWidth = StarStackView.bounds.width / CGFloat(Constants.starsCount)
         let rate = Int(location.x / starWidth) + 1
             
-            /// if current star doesn't match selectedRate then we change our rating
         if rate != self.selectedRate {
             feedbackGenerator.selectionChanged()
-        self.selectedRate = rate
-    }
+            self.selectedRate = rate
+        }
             
-    StarStackView.arrangedSubviews.forEach { subview in
+        StarStackView.arrangedSubviews.forEach { subview in
             guard let starImageView = subview as? UIImageView else {
                 return
             }
             starImageView.isHighlighted = starImageView.tag <= rate
+        }
+    }
+    
+    private func showStarType(id: Int) {
+        self.selectedRate = id
+        
+        StarStackView.arrangedSubviews.forEach { subview in
+            guard let starImageView = subview as? UIImageView else {
+                return
+            }
+            starImageView.isHighlighted = starImageView.tag <= id
         }
     }
     
