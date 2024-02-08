@@ -56,5 +56,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let images: String = String(describing: (menuItems.value(forKey: "Image") as! NSArray).object(at: indexPath.row))
+        let titles: String = String(describing: (menuItems.value(forKey: "Title") as! NSArray).object(at: indexPath.row))
+        let ratings: String = String(describing: (menuItems.value(forKey: "Rating") as! NSArray).object(at: indexPath.row))
+
+        let viewController = HomeDetailViewController()
+        viewController.titles = titles
+        viewController.imageStr = images
+        self.navigationController?.pushViewController(viewController, animated: true)
+
+    }
 
 }
